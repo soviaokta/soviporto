@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #2e5b87 100%);
+  background-size: 100% 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Kotak utama */
+.container {
+  background-color: rgba(72, 115, 158, 0.9);
+  border-radius: 25px;
+  padding: 30px;
+  width: 90%;
+  max-width: 1100px;
+  color: white;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+/* Judul */
+h1 {
+  text-align: center;
+  font-family: "Times New Roman", serif;
+  font-style: italic;
+  font-size: 40px;
+  margin-bottom: 30px;
+  background-color: #1e3e5c;
+  padding: 8px 0;
+  border-radius: 10px;
+  color: white;
+}
+
+/* Galeri sertifikat */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.gallery img {
+  width: 220px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Kotak deskripsi */
+.desc-box {
+  background: #355a7d;
+  border-radius: 25px;
+  padding: 20px;
+  text-align: left;
+  line-height: 1.7;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 15px;
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.2);
+}
+
+/* Tombol Back */
+.back-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #00aaff;
+  color: white;
+  border-radius: 25px;
+  padding: 8px 15px;
+  font-size: 14px;
+  text-decoration: none !important;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.back-btn::before {
+  content: "◀";
+  margin-right: 6px;
+  font-size: 16px;
+}
+
+.back-btn:hover {
+  background: #0088cc;
+  transform: scale(1.05);
+}

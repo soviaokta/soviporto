@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portofolio - Digital</title>
+  <style>
+    :root{
+      --blue-900:#12416d;
+      --blue-700:#195b9a;
+      --white:#ffffff;
+      --sidebar-w:250px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+
+    body{
+      display:flex;
+      min-height:100vh;
+      background:linear-gradient(180deg,#f8fbff 0%,#e6f0ff 100%);
+      font-family:Arial,Helvetica,sans-serif;
+      color:#0b2948;
+    }
+
+    /* Sidebar */
+    .sidebar{
+      width:var(--sidebar-w);
+      background:linear-gradient(180deg,var(--blue-900),var(--blue-700));
+      color:var(--white);
+      display:flex;
+      flex-direction:column;
+      padding:25px 15px;
+      position:fixed;
+      top:0;bottom:0;left:0;
+      transition:transform 0.3s ease;
+    }
+
+    .brand{
+      font-size:22px;
+      font-weight:bold;
+      text-align:center;
+      margin-bottom:25px;
+    }
+
+    .nav a{
+      display:block;
+      color:#fff;
+      text-decoration:none;
+      padding:12px 15px;
+      border-radius:8px;
+      margin-bottom:8px;
+      transition:all 0.3s ease;
+      cursor:pointer;
+    }
+
+    .nav a:hover{
+      background:rgba(255,255,255,0.25);
+      transform:translateX(8px);
+    }
+
+    .nav a.active{
+      background:rgba(255,255,255,0.35);
+      font-weight:bold;
+      transform:translateX(0);
+    }
+
+    /* Main */
+    .main{
+      margin-left:var(--sidebar-w);
+      flex:1;
+      padding:25px;
+    }
+
+    .page{display:none;animation:fade 0.3s ease}
+    .page.active{display:block}
+    @keyframes fade{from{opacity:0}to{opacity:1}}
+
+    h2{color:var(--blue-900);margin-bottom:10px}
+    p{line-height:1.6;margin-bottom:10px}
+    ul{margin-left:20px;margin-bottom:10px}
+
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .skill{
+      background:#fff;
+      border:1px solid #cdddf7;
+      border-radius:8px;
+      padding:10px 15px;
+      box-shadow:0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    form input, form textarea{
+      width:100%;
+      padding:10px;
+      margin-bottom:10px;
+      border:1px solid #ccc;
+      border-radius:6px;
+    }
+
+    form button{
+      background:var(--blue-700);
+      color:#fff;
+      border:none;
+      padding:10px 20px;
+      border-radius:6px;
+      cursor:pointer;
+      transition:background 0.3s ease;
+    }
+    form button:hover{background:#0d3d6b;}
+
+    /* Tombol menu (perbaikan) */
+    .menu-btn{
+      display:none;
+      background:var(--blue-700);
+      color:var(--white);
+      border:none;
+      padding:10px 18px;
+      border-radius:8px;
+      margin-bottom:15px;
+      cursor:pointer;
+      font-size:16px;
+      font-weight:bold;
+      box-shadow:0 3px 8px rgba(0,0,0,0.2);
+      transition:all 0.3s ease;
+    }
+    .menu-btn:hover{
+      background:#0d3d6b;
+      transform:scale(1.05);
+    }
+
+    /* Responsive */
+    @media(max-width:800px){
+      .sidebar{transform:translateX(-100%);z-index:100}
+      .sidebar.open{transform:translateX(0)}
+      .menu-btn{display:block}
+      .main{margin-left:0}
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <div class="brand">My Portofolio</div>
+    <div class="nav">
+      <a href="#" class="active" data-page="home">Home</a>
+      <a href="#" data-page="about">About Me</a>
+      <a href="#" data-page="experience">Experience</a>
+      <a href="#" data-page="skills">Skills</a>
+      <a href="#" data-page="certificate">Certificate</a>
+      <a href="#" data-page="contact">Contact</a>
+    </div>
+  </div>
+
+  <div class="main">
+    <button class="menu-btn" id="menuBtn">☰ Menu</button>
+
+    <section id="home" class="page active">
+      <h2>Halo, Saya Sovia Oktaviantika</h2>
+      <p>Saya adalah siswa SMKN 1 Nglegok jurusan Teknik Komputer dan Jaringan (TKJ).</p>
+    </section>
+
+    <section id="about" class="page">
+      <h2>Tentang Saya</h2>
+      <p>Saya memiliki minat besar dalam Jurusan Teknik Komputer dan Jaringan. Dengan kemampuan yang saya miliki saya dapat berkembang pesat dalam jurusan ini. Saya sudah belajar banyak dalam jurusan ini, terutama tentang simulasi jaringan menggunakan cisco paket tracer, dasar-dasar sistem operasi windows dan linux.Saya memiliki sifat yang teliti, disiplin, dan selalu bersemangat untuk belajar hal baru.</p>
+    </section>
+
+    <section id="experience" class="page">
+      <h2>Pengalaman</h2>
+      <ul>
+        <li>Pengalaman Praktik Kerja Lapangan (PKL)</li>
+      </ul>
+    </section>
+
+    <section id="skills" class="page">
+      <h2>Kemampuan</h2>
+      <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Canva</div>
+        <div class="skill">Desain UI</div>
+      </div>
+    </section>
+
+    <section id="certificate" class="page">
+      <h2>Sertifikat</h2>
+      <p>Berikut adalah beberapa sertifikat yang saya miliki:</p>
+      <ul>
+        <li>Sertifikat Aguna Course(Network Fundamental, PNETlab, Virtual Machine, Linux, Python)</li>
+        <li>Sertifikat Fortinet Training Institute(Introduction to the Treat Landscape, Getting Started in Cybersecurity)</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="page">
+      <h2>Kontak</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="Nama" required>
+        <input type="email" placeholder="Email" required>
+        <textarea rows="4" placeholder="Pesan"></textarea>
+        <button type="submit">Kirim</button>
+      </form>
+    </section>
+  </div>
+
+  <script>
+    const navLinks = document.querySelectorAll('.nav a');
+    const pages = document.querySelectorAll('.page');
+    const sidebar = document.getElementById('sidebar');
+    const menuBtn = document.getElementById('menuBtn');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        navLinks.forEach(a => a.classList.remove('active'));
+        link.classList.add('active');
+        const target = link.getAttribute('data-page');
+        pages.forEach(p => p.classList.remove('active'));
+        document.getElementById(target).classList.add('active');
+        sidebar.classList.remove('open');
+      });
+    });
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Pesan berhasil dikirim.');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
